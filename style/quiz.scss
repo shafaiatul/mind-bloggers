@@ -1,39 +1,163 @@
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web:900|Roboto:400,100);
 
-body { background-color: #fff; padding: 20px; }
+body { 
+	background-color: #fff;
+ 	padding: 20px; 
 
-#myQuiz {
-   font-family: 'Roboto', sans-serif; 
-   font-size: 16px; 
-   font-weight: 400;
-   width: 650px; 
-   height: 650px;
-   position: relative;
-   overflow: hidden;
-   color: #ffffff;
-   background: #000 url(../images/background.jpg) no-repeat 0px 0px;
+	.overlay-container{
+			position: relative;
+	
+		#myQuiz {
+		   font-family: 'Roboto', sans-serif; 
+		   font-size: 16px; 
+		   font-weight: 400;
+		   width: 650px; 
+		   height: 650px;
+		   position: relative;
+		   overflow: hidden;
+		   color: #ffffff;
+		   background: #000 url(../images/background.jpg) no-repeat 0px 0px;
 
-	h2 {
-		font-size: 3em;  /* 3 time the base font (3 x 16px) */
-		margin: 0;
-		font-weight: 100;
-	}
-	h3 {
-		font-size: 2.4em;  /* 2.4 time the base font (3 x 16px) */
-		margin: 0;
-		font-weight: 100;
-	}
-	p {
-		margin: 0px 0px 15px 0px;
-	}
-	/* Intro */
-	.intro {
-		position: absolute;
-		top: 225px;
-		left: 40px;
+		   	h1 {
+		   		font-size: 2em;
+		   		font-weight: 100;
+		   		text-transform: uppercase;
+		   		margin: 0;
+		   		position: absolute;
+		   		top: 25px;
+		   		left: 36px;
+		   		z-index: 10;
 
-		p {
-			margin: 0px 0px 40px 0px;
+		   		span {
+		   			display: block;
+		   			font-size: 3.2em;
+		   			font-weight: 900;
+		   			font-family: 'Titillium Web', sans-serif;
+		   			line-height: .65;
+		   		}
+		   	}
+
+			h2 {
+				font-size: 3em;  /* 3 time the base font (3 x 16px) */
+				margin: 0;
+				font-weight: 100;
+			}
+			h3 {
+				font-size: 2.4em;  /* 2.4 time the base font (3 x 16px) */
+				margin: 0;
+				font-weight: 100;
+			}
+			p {
+				margin: 0px 0px 15px 0px;
+			}
+			// Intro 
+			.intro {
+				position: absolute;
+				z-index: 10;
+				top: 225px;
+				left: 660px; //for transition to take part from left
+
+				p {
+					margin: 0px 0px 40px 0px;
+
+					&.btn {
+						display: inline-block;
+						cursor: pointer;
+						background: #c04b01;
+						color: #fff;
+						text-decoration: none;
+						padding: 5px 15px;
+						border-radius: 5px;
+
+					}
+				}
+			}
+			// Questions
+			.questions {
+				position: absolute;
+				z-index: 10;
+				width: 550px;
+				top: 225px;
+				left: 40px;
+
+				&.unanswered { 
+					.ans { //targeting the answer if they are inside of a question with the class of .unanswered
+						cursor: pointer;
+						&:hover {
+							background: rgba(238,189,102,.2); //it show the answers are clickable, shows not answered yet
+						}
+					}
+				}
+				&.answered { 
+					.ans { //targeting the answer if they are inside of a question with the class of .answered
+						cursor: default;
+					}
+				}
+
+				.txt {
+					font-size: 1.6em;
+					margin: 0px 0px 20px 0px;
+				}
+				.ans {
+					display: inline-block;
+					font-size: 1.1em;
+					width: 225px;
+					border: 2px solid rgba(238,189,102,.4);
+					border-radius: 5px;
+					padding: 10px;
+					margin: 0px 10px 10px 0px;
+					position: relative; // Because I will place green checkmark OR Red cross SVG on this depending on the user's answers.
+
+					&.selected {
+						border-color: #be4b16;
+						&::after {
+							background-image: url(../images/icon_incorrect.svg);
+						}
+					}
+					&.correct {
+						border-color: #45912e;
+						&::after {
+							background-image: url(../images/icon_correct.svg);
+						}
+					}
+					&::after {
+						content: ' ';
+						display: block;
+						width: 20px;
+						height: 20px;
+						background: no-repeat 0px 0px;
+						background-size: 20px 20px;
+						position: absolute;
+						top: 5px;
+						right: 5px;
+					}
+				}
+
+			}
 		}
+
+
+
+
+		// Overlay for the background
+		.overlay {
+			position: absolute;
+			width: 650px;
+			height: 650px;
+			top: 0;
+			z-index: 1;
+
+			background: -moz-linear-gradient(top, rgba(41,102,154,0.6) 0%, rgba(42,59,90,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top, rgba(41,102,154,0.6) 0%,rgba(42,59,90,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, rgba(41,102,154,0.6) 0%,rgba(42,59,90,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b329669a', endColorstr='#b32a3b5a',GradientType=0 ); /* IE6-9 */
+		}
+
 	}
+
+	
+
 }
+
+
+
