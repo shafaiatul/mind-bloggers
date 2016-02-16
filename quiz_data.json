@@ -1,0 +1,54 @@
+[
+	{
+		"question" : "______ is the generic name for Benicar?",
+		"answers"   : [
+			{"id" : 0, "text" : "olmesartan"},
+			{"id" : 1, "text" : "losartan"},
+			{"id" : 2, "text" : "irbesartan"},
+			{"id" : 3, "text" : "valsartan"}
+		],
+		"correct" : 0
+	},
+	{
+		"question" : "What is the generic name for NovoLog?",
+		"answers"  : [
+			{"id"  : 0, "text" : "insulin detemir"},
+			{"id"  : 1, "text" : "insulin aspart"},
+			{"id"  : 2, "text" : "insulin glulisine"},
+			{"id"  : 3, "text" : "insulin lispro"}
+		],
+		"correct"  : 1
+	},
+	{
+		"question" : "_______ is the generic name for Xalatan?",
+		"answers"  : [
+			{"id"  : 0, "text" : "latanoprost"},
+			{"id"  : 1, "text" : "travoprost"},
+			{"id"  : 2, "text" : "unoprostone"},
+			{"id"  : 3, "text" : "bimatoprost"},
+			{"id"  : 4, "text" : "valsartan"},
+			{"id"  : 5, "text" : "olmesartan"}
+		],
+		"correct"  : 0,
+		"feedback" : "Though the names seem similar, Last similar 3 letters could be good hint!."
+	},
+	{
+		"question" : "Metformin 800mg is a Diabetic Medication.",
+		"answers"  : [
+			{"id"  : 0, "text" : "True"},
+			{"id"  : 1, "text" : "False"}
+		],
+		"correct"  : 0
+	},
+	{
+		"question" : "What is the generic name for Synthroid? ",
+       "answers"  : [
+	       {"id" : 0, "text" : "liothyronine"},
+			{"id" : 1, "text" : "lithostat"},
+			{"id" : 2, "text" : "liotrix"},
+			{"id" : 3, "text" : "levothyroxine"}       
+	    ],
+		"correct"  : 3
+   }
+
+]

@@ -10,15 +10,16 @@ body {
 			position: relative;
 	
 		#myQuiz {
-		   font-family: 'Roboto', sans-serif; 
-		   font-size: 16px; 
-		   font-weight: 400;
-		   width: 650px; 
-		   height: 650px;
-		   position: relative;
-		   overflow: hidden;
-		   color: #ffffff;
-		   background: #000 url(../images/background.jpg) no-repeat 0px 0px;
+			font-family: 'Roboto', sans-serif; 
+			font-size: 16px; 
+			font-weight: 400;
+			width: 650px; 
+			height: 650px;
+			position: relative;
+			overflow: hidden;
+			color: #ffffff;
+			background: #000 url(../images/background.jpg) no-repeat 0px 0px;
+
 
 		   	h1 { // Quiz Title
 		   		font-size: 2em;
@@ -110,14 +111,25 @@ body {
 				position: absolute;
 				z-index: 10;
 				top: 225px;
-				left: 660px; //for transition to take part from left
+				left: 660px; //for transition to take part from right
+				width: 400px;
+
+				&.active, &.inactive {
+					transition: left 1.5s ease-in-out;
+				}
+				&.active {
+					left: 40px;
+				}
+				&.inactive {
+					left: -1350px;
+				}
 
 				p {
 					margin: 0px 0px 40px 0px;
 				}
 			}
 			// Questions with answers and feedbacks
-			.questions {
+			.question {
 				position: absolute;
 				z-index: 10;
 				width: 550px;
@@ -132,10 +144,23 @@ body {
 						}
 					}
 				}
-				&.answered { 
+				&.answered {
+					
 					.ans { //targeting the answer if they are inside of a question with the class of .answered
 						cursor: default;
 					}
+
+					&.active, &.inactive {
+						transition: left 1.5s ease-in-out;
+					}
+					&.active {
+						left: 40px;
+					}
+					&.inactive {
+						left: 1350px;
+					}
+
+
 				}
 
 				.txt {

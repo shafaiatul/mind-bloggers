@@ -84,25 +84,38 @@ body {
         position: absolute;
         z-index: 10;
         top: 225px;
-        left: 660px; }
+        left: 660px;
+        width: 400px; }
+        body .overlay-container #myQuiz .intro.active, body .overlay-container #myQuiz .intro.inactive {
+          transition: left 1.5s ease-in-out; }
+        body .overlay-container #myQuiz .intro.active {
+          left: 40px; }
+        body .overlay-container #myQuiz .intro.inactive {
+          left: -1350px; }
         body .overlay-container #myQuiz .intro p {
           margin: 0px 0px 40px 0px; }
-      body .overlay-container #myQuiz .questions {
+      body .overlay-container #myQuiz .question {
         position: absolute;
         z-index: 10;
         width: 550px;
         top: 225px;
         left: 660px; }
-        body .overlay-container #myQuiz .questions.unanswered .ans {
+        body .overlay-container #myQuiz .question.unanswered .ans {
           cursor: pointer; }
-          body .overlay-container #myQuiz .questions.unanswered .ans:hover {
+          body .overlay-container #myQuiz .question.unanswered .ans:hover {
             background: rgba(238, 189, 102, 0.2); }
-        body .overlay-container #myQuiz .questions.answered .ans {
+        body .overlay-container #myQuiz .question.answered .ans {
           cursor: default; }
-        body .overlay-container #myQuiz .questions .txt {
+        body .overlay-container #myQuiz .question.answered.active, body .overlay-container #myQuiz .question.answered.inactive {
+          transition: left 1.5s ease-in-out; }
+        body .overlay-container #myQuiz .question.answered.active {
+          left: 40px; }
+        body .overlay-container #myQuiz .question.answered.inactive {
+          left: 1350px; }
+        body .overlay-container #myQuiz .question .txt {
           font-size: 1.6em;
           margin: 0px 0px 20px 0px; }
-        body .overlay-container #myQuiz .questions .ans {
+        body .overlay-container #myQuiz .question .ans {
           display: inline-block;
           font-size: 1.1em;
           width: 225px;
@@ -111,15 +124,15 @@ body {
           padding: 10px;
           margin: 0px 10px 10px 0px;
           position: relative; }
-          body .overlay-container #myQuiz .questions .ans.selected {
+          body .overlay-container #myQuiz .question .ans.selected {
             border-color: #be4b16; }
-            body .overlay-container #myQuiz .questions .ans.selected::after {
+            body .overlay-container #myQuiz .question .ans.selected::after {
               background-image: url(../images/icon_incorrect.svg); }
-          body .overlay-container #myQuiz .questions .ans.correct {
+          body .overlay-container #myQuiz .question .ans.correct {
             border-color: #45912e; }
-            body .overlay-container #myQuiz .questions .ans.correct::after {
+            body .overlay-container #myQuiz .question .ans.correct::after {
               background-image: url(../images/icon_correct.svg); }
-          body .overlay-container #myQuiz .questions .ans::after {
+          body .overlay-container #myQuiz .question .ans::after {
             content: ' ';
             display: block;
             width: 20px;
@@ -129,17 +142,17 @@ body {
             position: absolute;
             top: 5px;
             right: 5px; }
-        body .overlay-container #myQuiz .questions .feedback {
+        body .overlay-container #myQuiz .question .feedback {
           color: #efbe5e;
           margin-top: 50px;
           transition: opacity 1.5s, margin-top 1.5s;
           visibility: hidden;
           opacity: 0; }
-          body .overlay-container #myQuiz .questions .feedback .btn {
+          body .overlay-container #myQuiz .question .feedback .btn {
             margin-top: 5px; }
-          body .overlay-container #myQuiz .questions .feedback strong {
+          body .overlay-container #myQuiz .question .feedback strong {
             color: #fff; }
-        body .overlay-container #myQuiz .questions.answered .feedback {
+        body .overlay-container #myQuiz .question.answered .feedback {
           visibility: visible;
           opacity: 1;
           margin-top: 10px; }

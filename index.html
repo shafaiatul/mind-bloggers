@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="myQuiz">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,29 +10,31 @@
 		
 		<div class="overlay-container">
 
-			<div id="myQuiz">
+			<div id="myQuiz" ng-controller="QuizCtrl">
 					
 				<h1>Test Your Knowledge :<span>Drugs</span></h1> <!-- Quiz Title -->
 
 				<div class="progress"> <!-- Progress -->
-					<div class="answered correct"></div>
-					<div class="on"></div>
-					<div></div>
+					<div class="{{ ($index === activeQuestion) ? 'on' : 'off' }}" ng-repeat="myQuestion in myQuestions"></div> <!-- (loop through all of the questions in myQuestions variable) -->
 				</div> 
 
-				<div class="intro"> <!-- Into -->
+				<div class="intro {{ (activeQuestion > -1) ? 'inactive' : 'active' }}"> <!-- Into -->
 					<h2>Welcome</h2>
 					<p>Click begin to test your knowledge of Drugs</p>
-					<p class="btn">Begin</p>
+					<p class="btn" ng-click="activeQuestion = 0">Begin</p>
 				</div>
 
-				<div class="questions answered"> <!-- Questions with answers and feedbacks-->
-
-					<p class="txt">This is a question</p>
-					<p class="ans">Answer 1</p>
-					<p class="ans">Answer 2</p>
-					<p class="ans">Answer 3</p>
-					<p class="ans">Answer 4</p>
+				<div 
+					class="question answered {{ $index === activeQuestion ? 'active' : 'inactive' }}" 
+					ng-repeat="myQuestion in myQuestions"> <!-- Questions with answers and feedbacks-->
+					
+					<p class="txt">{{myQuestion.question}}</p>
+					<p class="ans" 
+						ng-click="selectAnswer($parent.$index, $index)"
+						ng-repeat="Answer in myQuestions[$index].answers">
+						{{Answer.text}}
+					</p>
+					
 
 					<div class="feedback"> <!-- feedbacks -->
 						<p>You are <strong>Correct</strong> </p>
@@ -62,6 +64,8 @@
 
 		</div>
 		
-
+		
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/quiz.js"></script>
 	</body>
 </html>
