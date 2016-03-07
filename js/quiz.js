@@ -50,6 +50,18 @@
         $scope.selectContinue = function () {
             return $scope.activeQuestion += 1;
         };
+
+        $scope.createShareLinks = function (percentage) {
+            var url = 'http://shafaiatul.com/';
+
+            var emailLink = '<a class="btn email" href="mailto:?subject=Try to beat my Quiz Score!&amp;body=I scored a '+percentage+'% on this quiz about DRUGS. Try to beat my score at '+url+' ">Email a friend</a>';
+
+            var twitterLink = '<a target="_blank" class="btn twitter" href="http://twitter.com/share?text=I scored a '+percentage+'%25 on this quiz on DRUGS. Try to beat my score at&amp;hashtags=DRUGQuiz&amp;url='+url+' ">Tweet your score</a>';
+
+            var newMarkup = emailLink + twitterLink;
+
+            return $sce.trustAsHtml(newMarkup);
+        };
 	}]);
 
 })();

@@ -9,7 +9,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     width: 650px;
-    height: 875px;
+    height: 650px;
     position: relative;
     overflow: hidden;
     background: #2a3b5a url(../images/background.jpg) no-repeat 0 0;
@@ -162,8 +162,8 @@ body {
       color: #fff;
       width: 500px;
       position: absolute;
-      top: 680px !important;
-      left: 40px !important;
+      top: 225px;
+      left: 660px;
       z-index: 10; }
       .overlay-container #myQuiz .results .share {
         margin-top: 40px; }
@@ -204,5 +204,70 @@ body {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b329669a', endColorstr='#b32a3b5a',GradientType=0 );
     /* IE6-9 */ }
+
+@media screen and (max-width: 650px) {
+  body {
+    padding: 0;
+    margin: 0; }
+
+  .overlay-container #myQuiz {
+    width: 320px;
+    background-size: 320px auto; }
+    .overlay-container #myQuiz h1 {
+      width: 300px;
+      font-size: 1.3em;
+      top: 25px;
+      left: 25px; }
+      .overlay-container #myQuiz h1 span {
+        line-height: 28px; }
+    .overlay-container #myQuiz h2 {
+      margin: 0; }
+    .overlay-container #myQuiz h3 {
+      font-size: 2.2em;
+      margin-bottom: 15px; }
+    .overlay-container #myQuiz .progress {
+      width: 300px;
+      top: 110px;
+      left: 25px; }
+      .overlay-container #myQuiz .progress div {
+        width: 25px;
+        height: 25px;
+        margin-right: 20px; }
+        .overlay-container #myQuiz .progress div.correct::after {
+          top: -5px;
+          opacity: 1; }
+      .overlay-container #myQuiz .progress div::after {
+        top: -30px;
+        width: 53px;
+        height: 33px; }
+    .overlay-container #myQuiz .intro {
+      width: 300px;
+      top: 135px;
+      left: 330px; }
+      .overlay-container #myQuiz .intro.inactive {
+        left: -650px; }
+    .overlay-container #myQuiz .question {
+      width: 300px;
+      top: 135px;
+      left: 330px; }
+      .overlay-container #myQuiz .question .txt {
+        font-size: 1.4em;
+        margin-bottom: 15px; }
+      .overlay-container #myQuiz .question .ans {
+        font-size: 1em;
+        padding: 5px 10px;
+        margin-bottom: 10px; }
+    .overlay-container #myQuiz .results {
+      width: 260px;
+      top: 150px;
+      left: 330px; }
+      .overlay-container #myQuiz .results .share {
+        margin-top: 20px; }
+      .overlay-container #myQuiz .results a.btn {
+        margin-bottom: 20px; }
+    .overlay-container #myQuiz .active {
+      left: 25px; }
+    .overlay-container #myQuiz .inactive.answered {
+      left: -650px; } }
 
 /*# sourceMappingURL=quiz.css.map */

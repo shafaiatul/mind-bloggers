@@ -44,7 +44,7 @@ body {
     	font-size: 16px;
     	font-weight: 400;
     	width: 650px;
-    	height: 875px;
+    	height: 650px;
     	position: relative;
     	overflow: hidden;
     	background: rgba(42,59,90,1) $url_1 no-repeat 0 0;
@@ -237,8 +237,8 @@ body {
     		color: $white;
     		width: 500px;
     		position: absolute;
-    		top: 680px !important;
-    		left: 40px !important;
+            top:225px;
+    		left: 660px;
             z-index: 10;
     		.share {
     			margin-top: 40px;
@@ -291,4 +291,96 @@ body {
 			@include overlay_color;
 		}
 
+}
+
+@media screen and (max-width: 650px) {
+    //colors
+$black: #000;
+
+    body {
+    	padding: 0;
+    	margin: 0;
+    }
+    .overlay-container{
+
+        #myQuiz {
+        	width: 320px;
+        	background-size: 320px auto;
+        	h1 {
+        		width: 300px;
+        		font-size: 1.3em;
+        		top: 25px;
+        		left: 25px;
+
+        		span {
+        			line-height: 28px;
+        		}
+        	}
+        	h2 {
+        		margin: 0;
+        	}
+        	h3 {
+        		font-size: 2.2em;
+        		margin-bottom: 15px;
+        	}
+        	.progress {
+        		width: 300px;
+        		top: 110px;
+        		left: 25px;
+        		div {
+        			width: 25px;
+        			height: 25px;
+        			margin-right: 20px;
+        			&.correct::after {
+        				top: -5px;
+        				opacity: 1;
+        			}
+        		}
+        		div::after {
+        			top: -30px;
+        			width: 53px;
+        			height: 33px;
+        		}
+        	}
+        	.intro {
+        		width: 300px;
+        		top: 135px;
+        		left: 330px;
+        		&.inactive {
+        			left: -650px;
+        		}
+        	}
+        	.question {
+        		width: 300px;
+        		top: 135px;
+        		left: 330px;
+        		.txt {
+        			font-size: 1.4em;
+        			margin-bottom: 15px;
+        		}
+        		.ans {
+        			font-size: 1em;
+        			padding: 5px 10px;
+        			margin-bottom: 10px;
+        		}
+        	}
+        	.results {
+        		width: 260px;
+        		top: 150px;
+        		left: 330px;
+        		.share {
+        			margin-top: 20px;
+        		}
+        		a.btn {
+        			margin-bottom: 20px;
+        		}
+        	}
+        	.active {
+        		left: 25px;
+        	}
+        	.inactive.answered {
+        		left: -650px;
+        	}
+        }
+    }
 }
