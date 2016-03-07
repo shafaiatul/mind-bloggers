@@ -24,7 +24,13 @@ $url_3: url(../images/icon_incorrect.svg);
 $url_4: url(../images/icon_correct.svg);
 $url_5: url(../images/icon_email.svg);
 $url_6: url(../images/icon_twitter.svg);
-
+//overlay
+@mixin overlay_color {
+    background: -moz-linear-gradient(top, rgba(41,102,154,0.7) 0%, rgba(42,59,90,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(41,102,154,0.7) 0%,rgba(42,59,90,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(41,102,154,0.7) 0%,rgba(42,59,90,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b329669a', endColorstr='#b32a3b5a',GradientType=0 ); /* IE6-9 */
+};
 
 body {
 	background-color: $white;
@@ -38,10 +44,10 @@ body {
     	font-size: 16px;
     	font-weight: 400;
     	width: 650px;
-    	height: 650px;
+    	height: 875px;
     	position: relative;
     	overflow: hidden;
-    	background: $black $url_1 no-repeat 0 0;
+    	background: rgba(42,59,90,1) $url_1 no-repeat 0 0;
     	color: $white;
 
     	h1 {
@@ -231,8 +237,8 @@ body {
     		color: $white;
     		width: 500px;
     		position: absolute;
-    		top: 225px;
-    		left: 660px;
+    		top: 680px !important;
+    		left: 40px !important;
             z-index: 10;
     		.share {
     			margin-top: 40px;
@@ -282,11 +288,7 @@ body {
 			height: 650px;
 			top: 0;
 			z-index: 1;
-
-			background: -moz-linear-gradient(top, rgba(41,102,154,0.7) 0%, rgba(42,59,90,1) 100%); /* FF3.6-15 */
-			background: -webkit-linear-gradient(top, rgba(41,102,154,0.7) 0%,rgba(42,59,90,1) 100%); /* Chrome10-25,Safari5.1-6 */
-			background: linear-gradient(to bottom, rgba(41,102,154,0.7) 0%,rgba(42,59,90,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b329669a', endColorstr='#b32a3b5a',GradientType=0 ); /* IE6-9 */
+			@include overlay_color;
 		}
 
 }

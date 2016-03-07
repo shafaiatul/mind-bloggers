@@ -55,9 +55,9 @@
 
 				</div>
 
-				<div class="results"> <!-- Result and share-->
+				<div class="results {{ (totalQuestions === activeQuestion) ? 'active' : 'inactive' }}"> <!-- Result and share-->
 					<h3>Results</h3>
-					<p>You scored X% by answering X of the total X questions.</p>
+					<p>You scored {{percentage}}% by answering {{score}} of the total {{totalQuestions}} questions.</p>
 					<p>Use the links below to challege your friends</p>
 					<div class="share">
 						<a class="btn email" href="">Email</a>
